@@ -18,6 +18,7 @@ public class Persona
     //La edad de la persona
     private int edad=0;
     private int calorias=0;
+    private int caloriaMaxima=0;
     /**
      * Constructor for objects of class Persona
      */
@@ -45,7 +46,25 @@ public class Persona
         }
         return comidaIngerida;
     }
-
+    
+    /**
+     * Metodo para preguntar a la persona
+     */
+    public String contestar(String respuesta){
+     boolean respuestas= false;
+     if(caloriaMaxima < calorias && respuesta.contains(respuesta)){
+        System.out.println(respuesta.toUpperCase());
+        respuestas=true;
+        }
+      if (respuesta.length() % 3 == 0){
+          respuesta="SI";
+      }else{
+        respuesta="NO";
+      }
+      return respuesta;
+    }
+    
+    
     }
     
 
