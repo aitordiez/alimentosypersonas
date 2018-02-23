@@ -37,5 +37,10 @@ public class Comida
         return cantidadDeCalorias;
     }
     
-
+    /**
+     * metodo que te devuelve el nombre 
+     */
+    public String getNombre(){
+        return nombreComida;
+    }
 }

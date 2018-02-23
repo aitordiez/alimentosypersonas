@@ -1,4 +1,4 @@
-
+import java.util.ArrayList;
 /**
  * Write a description of class Persona here.
  *
@@ -19,6 +19,7 @@ public class Persona
     private int edad=0;
     private int calorias=0;
     private int caloriaMaxima=0;
+    private ArrayList<Comida> alimentos;
     /**
      * Constructor for objects of class Persona
      */
@@ -64,9 +65,28 @@ public class Persona
       return respuesta;
     }
     
-    
+    /**
+     * Metodo para imprimir y devolver por pantalla
+     */
+    public String getAlimentoMasCaloricoConsumido(){
+        String comidaDevolver= null;
+        Comida comida= null;
+        int mayorCalorias = 0;
+        
+         for (Comida comidas : alimentos){
+            if (comidas.getCalorias() >= mayorCalorias){
+                comida = comidas;
+                mayorCalorias = comida.getCalorias();
+            }
+        }
+        
+        if (comida != null){
+            System.out.println(comida.getNombre());
+            comidaDevolver = comida.getNombre();
+        }
+        return comidaDevolver;
     }
-    
+}    
 
    
 
